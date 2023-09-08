@@ -1,0 +1,11 @@
+groups:
+- name: kubernetes-node-cpu
+  rules:
+  - alert: HighNodeCPULoad
+    expr: sum(rate(node_cpu_seconds_total{mode="idle"}[5m])) < 10
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      description: "High CPU load on Kubernetes node {{ $labels.instance }}"
+      summary: "High CPU load on Kubernetes node {{ $labels.instance }}"

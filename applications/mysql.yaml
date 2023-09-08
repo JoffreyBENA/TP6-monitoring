@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:latest
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: your_mysql_root_password_here
+            - name: MYSQL_DATABASE
+              value: your_mysql_database_name_here
+          ports:
+            - containerPort: 3306
+          resources:
+            limits:
+              cpu: "500m" # Limite CPU de 500 milli-CPU (0,5 CPU)
+              memory: "512Mi" # Limite mémoire de 512 MiB
+            requests:
+              cpu: "200m" # Demande CPU de 200 milli-CPU (0,2 CPU)
+              memory: "256Mi" # Demande mémoire de 256 MiB
