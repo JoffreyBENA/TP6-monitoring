@@ -1,0 +1,14 @@
+---
+- name: Connection au cluster GKE
+  gcp_container_cluster:
+    name: your-cluster-name
+    project: your-project-id
+    region: your-cluster-region
+    auth_kind: serviceaccount
+    service_account_file: /path/to/your/service-account-key.json
+  delegate_to: localhost
+
+- name: Apply Kubernetes Deployment
+  k8s:
+    definition: /path/to/your/deployment.yaml
+    state: present

@@ -1,0 +1,13 @@
+---
+# Configuration et LAncement du clsuter GKE
+- name: Déploiement de l'image Docker sur le cluster GKE
+  hosts: gke-cluster
+  remote_user: joffreym2igcp
+  gather_facts: false
+  become: true
+
+  vars_files:
+    - vars.yml
+
+  roles:
+    - gke-cluster

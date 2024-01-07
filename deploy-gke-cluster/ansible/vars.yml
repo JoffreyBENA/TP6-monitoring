@@ -1,0 +1,13 @@
+---
+## -- Variables pour le déploiement de l'image Docker sur la 'vm-dev' --
+
+# Variable 'GKE_external_IP' :
+GKE_external_ip: "34.163.80.176"
+
+#---------------------------------------------------------------------------------------#
+
+# Variables pour le rôle gke-cluster
+cluster_name : "my-gke-cluster"
+gcp_zone : "europe-west9"
+gcp_project : "exalted-airfoil-402614"
+

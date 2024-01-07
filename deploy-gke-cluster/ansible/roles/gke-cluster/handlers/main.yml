@@ -1,0 +1,4 @@
+# Redémarrage du service Docker
+---
+- name: Restart GKE deployment
+  command: kubectl rollout restart deployment/{{ deployment_name }} --kubeconfig={{ kubectl_config }}
