@@ -34,7 +34,7 @@ Avant de déployer la solution de supervision, assurez-vous que :
     - Le cluster Kubernetes est déjà déployé et prêt à recevoir de nouveaux déploiements.
     - Vous disposez d'un accès administrateur pour créer des Déploiements, Services et ConfigMaps dans le cluster.
 
-![supervision-app](schema/supervision-app.drawio.pdf)
+![supervision-app](schema/supervision-app.drawio.png)
 
 4- Déploiement :
 Pour déployer la solution de supervision, suivez les étapes ci-dessous :
