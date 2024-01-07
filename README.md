@@ -136,7 +136,7 @@ Pour utiliser les tableaux de bord fournis avec Grafana :
 
 Les alertes Prometheus sont définies dans les fichiers YAML du dossier alerts/. Les alertes importantes ont été configurées pour les métriques critiques, comme la haute utilisation CPU sur les nœuds Kubernetes.
 
-## 10- Ajouter de nouvelles Métriques:
+## 10- Ajouter de nouvelles Métriques :
 
 Pour ajouter des métriques d'une nouvelle application à superviser :
 
