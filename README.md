@@ -8,24 +8,7 @@ Cette documentation décrit la mise en place d'une solution de supervision centr
 
 2- Arborescence des Fichiers
 
-supervision_solution/
-├── prometheus/
-│   ├── prometheus.yaml
-│   └── prometheus-config.yaml
-├── grafana/
-│   ├── grafana.yaml
-│   └── dashboards/
-│       └── kube-node-dashboard.json
-├── exporters/
-│   ├── node-exporter.yaml
-│   ├── kube-state-metrics.yaml
-│   ├── nginx-exporter.yaml
-│   └── mysql-exporter.yaml
-├── applications/
-│   ├── nginx-demo.yaml
-│   └── mysql.yaml
-└── alerts/
-    └── kube-node-cpu-alerts.yaml
+
 
 3- Prérequis :
 
@@ -34,7 +17,7 @@ Avant de déployer la solution de supervision, assurez-vous que :
     - Le cluster Kubernetes est déjà déployé et prêt à recevoir de nouveaux déploiements.
     - Vous disposez d'un accès administrateur pour créer des Déploiements, Services et ConfigMaps dans le cluster.
 
-![supervision-app](schema/supervision-app.drawio.png)
+![supervision-app](schema/supervision-app.drawio.jpg)
 
 4- Déploiement :
 Pour déployer la solution de supervision, suivez les étapes ci-dessous :
