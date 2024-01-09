@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kube-state-metrics
+  name: mysql-exporter
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kube-state-metrics
+      app: mysql-exporter
   template:
     metadata:
       labels:
-        app: kube-state-metrics
+        app: mysql-exporter
     spec:
       containers:
-        - name: kube-state-metrics
-          image: quay.io/coreos/kube-state-metrics:latest
+        - name: mysql-exporter
+          image: prom/mysqld-exporter:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 9104
           resources:
             limits:
               cpu: "200m" # Limite CPU de 200 milli-CPU (0,2 CPU)
@@ -24,3 +24,9 @@ spec:
             requests:
               cpu: "100m" # Demande CPU de 100 milli-CPU (0,1 CPU)
               memory: "128Mi" # Demande mémoire de 128 MiB
+          env:
+            - name: DATA_SOURCE_NAME
+              value: "root:your_mysql_root_password_here@(mysql:3306)/your_mysql_database_name_here"
+          # env:
+          #   - name: DATA_SOURCE_NAME
+          #     value: "user:password@(mysql-service:3306)/"
