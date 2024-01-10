@@ -12,10 +12,8 @@ Cette documentation décrit la mise en place d'une solution de supervision centr
 . # Arborescence du repository
 ├── README.md
 ├── alerts
+│   ├── alert.rules
 │   └── kube-node-cpu-alerts.yaml
-├── applications
-│   ├── mysql.yaml
-│   └── nginx-demo.yaml
 ├── deploy-gke-cluster
 │   ├── README.md
 │   ├── ansible
@@ -55,25 +53,35 @@ Cette documentation décrit la mise en place d'une solution de supervision centr
 │   │       ├── outputs.tf
 │   │       └── variables.tf
 │   └── terraform-destroy.sh
-├── exporters
-│   ├── kube-state-metrics.yaml
-│   ├── mysql-exporter.yaml
-│   ├── nginx-exporter.yaml
-│   └── node-exporter.yaml
+├── exporter
+│   ├── kube-state-metrics-deployment.yaml
+│   ├── kube-state-metrics-service.yaml
+│   ├── mysql-exporter-deployment.yaml
+│   ├── mysql-exporter-service.yaml
+│   ├── nginx-exporter-deployment.yaml
+│   ├── nginx-exporter-service.yaml
+│   ├── node-exporter-deployment.yaml
+│   └── node-exporter-service.yaml
 ├── grafana
-│   ├── dashboards
-│   │   └── kube-node-dashboard.json
-│   └── grafana.yaml
+│   ├── grafana-deployment.yaml
+│   └── grafana-service.yaml
+├── mysql
+│   ├── mysql-deployment.yaml
+│   └── mysql-service.yaml
+├── nginx
+│   ├── nginx-deployment.yaml
+│   └── nginx-service.yaml
 ├── prometheus
-│   ├── prometheus-config.yaml
-│   └── prometheus.yaml
+│   ├── prometheus-deployment.yaml
+│   └── prometheus-service.yaml
 ├── schema
+│   ├── supervision-app-exporters.jpg
 │   ├── supervision-app.drawio
 │   ├── supervision-app.drawio.pdf
 │   └── supervision-app.jpg
 └── tp_6_monitoring.pdf
 
-19 directories, 44 files
+19 directories, 52 files
 
 ```
 
