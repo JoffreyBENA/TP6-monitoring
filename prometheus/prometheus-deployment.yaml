@@ -35,6 +35,9 @@ data:
       - job_name: 'mysql-exporter-service'
         static_configs:
           - targets: ['mysql-exporter-service:9104']
+    
+    # rule_files:
+    #   - /etc/prometheus/rules/alerts.rules
 
 ---
 apiVersion: apps/v1
