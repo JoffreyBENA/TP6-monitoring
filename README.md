@@ -88,11 +88,11 @@ Cette documentation décrit la mise en place d'une solution de supervision centr
 Cette arborescence représente la structure d'un projet avec plusieurs dossiers et fichiers. Voici une explication simple de chaque partie :
 
 1. README.md: Fichier de documentation expliquant le projet.
-   
+
 2. alerts/
    1. alert.rules: Fichier contenant les règles d'alerte Prometheus pour la surveillance.
    2. kube-node-cpu-alerts.yaml: Fichier YAML définissant des alertes spécifiques pour la CPU des nœuds Kubernetes.
-   
+
 3. deploy-gke-cluster/
    1. **README.md**: Fichier de documentation spécifique au déploiement du cluster GKE.
    2. **ansible/**: Dossier contenant les fichiers Ansible pour le déploiement et la configuration.
@@ -111,24 +111,24 @@ Cette arborescence représente la structure d'un projet avec plusieurs dossiers 
       5. terraform.tfstate, terraform.tfstate.backup: Fichiers de suivi de l'état Terraform.
       6. variables.tf: Variables Terraform.
    7. **terraform-destroy.sh**: Script Bash pour détruire les ressources Terraform.
-   
+
 4. exporter/
-  Fichiers YAML définissant le déploiement et le service Kubernetes pour différents exportateurs (kube-state-metrics, MySQL, Nginx, Node
+Fichiers YAML définissant le déploiement et le service Kubernetes pour différents exportateurs (kube-state-metrics, MySQL, Nginx, Node
 
 5. grafana/
-  Fichiers YAML définissant le déploiement et le service Kubernetes pour Grafana.
+Fichiers YAML définissant le déploiement et le service Kubernetes pour Grafana.
 
 6. mysql/
-  Fichiers YAML définissant le déploiement et le service Kubernetes pour MySQL.
+Fichiers YAML définissant le déploiement et le service Kubernetes pour MySQL.
 
 7. nginx/
-  Fichiers YAML définissant le déploiement et le service Kubernetes pour Nginx.
+Fichiers YAML définissant le déploiement et le service Kubernetes pour Nginx.
 
 8. prometheus/
-  Fichiers YAML définissant le déploiement et le service Kubernetes pour Prometheus.
+Fichiers YAML définissant le déploiement et le service Kubernetes pour Prometheus.
 
 9. schema/
-  Fichiers graphiques (JPG, drawio, PDF) décrivant le schéma de surveillance de l'application.
+Fichiers graphiques (JPG, drawio, PDF) décrivant le schéma de surveillance de l'application.
 
 10. tp_6_monitoring.pdf: Document PDF lié au TP 6 sur le monitoring.
 
