@@ -28,13 +28,13 @@ data:
             action: keep
             regex: default;kubernetes;https
 
-      - job_name: 'nginx-exporter'
+      - job_name: 'nginx-exporter-service'
         static_configs:
-          - targets: ['nginx-exporter:9113']
+          - targets: ['nginx-exporter-service:9113']
 
-      - job_name: 'mysql-exporter'
+      - job_name: 'mysql-exporter-service'
         static_configs:
-          - targets: ['mysql-exporter:9104']
+          - targets: ['mysql-exporter-service:9104']
 
 ---
 apiVersion: apps/v1

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-exporter-service
+spec:
+  selector:
+    app: mysql-exporter  # Assurez-vous que c'est le même que dans le Deployment mysql-exporter
+  ports:
+    - protocol: TCP
+      port: 9104  # Le port sur lequel le MySQL Exporter expose les métriques
+      targetPort: 9104
+  type: LoadBalancer
