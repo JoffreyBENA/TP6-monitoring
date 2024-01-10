@@ -85,6 +85,55 @@ Cette documentation décrit la mise en place d'une solution de supervision centr
 
 ```
 
+Cette arborescence représente la structure d'un projet avec plusieurs dossiers et fichiers. Voici une explication simple de chaque partie :
+
+1. README.md: Fichier de documentation expliquant le projet.
+   
+2. alerts/
+   1. alert.rules: Fichier contenant les règles d'alerte Prometheus pour la surveillance.
+   2. kube-node-cpu-alerts.yaml: Fichier YAML définissant des alertes spécifiques pour la CPU des nœuds Kubernetes.
+   
+3. deploy-gke-cluster/
+   1. **README.md**: Fichier de documentation spécifique au déploiement du cluster GKE.
+   2. **ansible/**: Dossier contenant les fichiers Ansible pour le déploiement et la configuration.
+      1. ansible.cfg, inventory.ini, playbook.yml, vars.yml: Fichiers de configuration Ansible.
+      2. roles/gke-cluster/
+         1. handlers/main.yml: Fichier Ansible définissant des gestionnaires.
+         2. tasks/main.yml: Fichier Ansible contenant les tâches principales.
+   3. **creation-inventory.sh**: Script Bash pour la création d'un fichier d'inventaire Ansible.
+   4. **credentials.json**: Fichier de clés d'identification pour l'accès à Google Cloud Platform.
+   5. **deploy.sh**: Script de déploiement global du projet.
+   6. **terraform/**: Dossier contenant les fichiers Terraform pour la configuration du cluster GKE.
+      1. firewall/main.tf, firewall/outputs.tf, firewall/variables.tf: Configuration du pare-feu.
+      2. gke-cluster/main.tf, gke-cluster/outputs.tf, gke-cluster/variables.tf: Configuration du cluster GKE.
+      3. service_account/main.tf, service_account/outputs.tf, service_account/variables.tf: Configuration du compte de service.
+      4. vpc/main.tf, vpc/outputs.tf, vpc/variables.tf: Configuration du réseau VPC.
+      5. terraform.tfstate, terraform.tfstate.backup: Fichiers de suivi de l'état Terraform.
+      6. variables.tf: Variables Terraform.
+   7. **terraform-destroy.sh**: Script Bash pour détruire les ressources Terraform.
+   
+4. exporter/
+  Fichiers YAML définissant le déploiement et le service Kubernetes pour différents exportateurs (kube-state-metrics, MySQL, Nginx, Node
+
+5. grafana/
+  Fichiers YAML définissant le déploiement et le service Kubernetes pour Grafana.
+
+6. mysql/
+  Fichiers YAML définissant le déploiement et le service Kubernetes pour MySQL.
+
+7. nginx/
+  Fichiers YAML définissant le déploiement et le service Kubernetes pour Nginx.
+
+8. prometheus/
+  Fichiers YAML définissant le déploiement et le service Kubernetes pour Prometheus.
+
+9. schema/
+  Fichiers graphiques (JPG, drawio, PDF) décrivant le schéma de surveillance de l'application.
+
+10. tp_6_monitoring.pdf: Document PDF lié au TP 6 sur le monitoring.
+
+Le projet est organisé de manière à regrouper les fichiers en fonction de leur fonctionnalité (déploiement, exportateurs, outils de surveillance, etc.).
+
 ## 3- Prérequis :
 
 Avant de déployer la solution de supervision, assurez-vous que :
@@ -106,13 +155,18 @@ Pour déployer la solution de supervision, suivez les étapes ci-dessous :
 
 ### a- Déployez Prometheus, Grafana et les Exporters :
 
-  - kubectl apply -f prometheus/prometheus.yaml
-  - kubectl apply -f grafana/grafana.yaml
+```bash
   - kubectl apply -f exporters/
+  - kubectl apply -f prometheus/
+  - kubectl apply -f grafana/
+```
 
 ### b- Déployez les applications de démonstration (Nginx et MySQL) :
 
-  - kubectl apply -f applications/
+```bash
+  - kubectl apply -f nginx/
+  - kubectl apply -f mysql
+```
 
 ## 6- Configuration :
 
