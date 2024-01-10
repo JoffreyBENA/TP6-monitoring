@@ -86,7 +86,11 @@ Avant de déployer la solution de supervision, assurez-vous que :
 
 ## 4- Architecture :
 
+Architecture globale:
 ![supervision-app](schema/supervision-app.jpg)
+
+Focus sur fonctionnement des exporters:
+![supervision-app](schema/supervision-app-exporters.jpg)
 
 ## 5- Déploiement :
 

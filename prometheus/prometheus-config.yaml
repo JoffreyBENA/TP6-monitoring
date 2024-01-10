@@ -13,3 +13,4 @@ data:
           - targets: ['localhost:9090']
 
 # Ajoutez ici les configurations pour les autres Exporters et cibles à surveiller
+
