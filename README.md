@@ -212,3 +212,7 @@ Pour ajouter des métriques d'une nouvelle application à superviser :
 
 ## Conclusion :
 La solution de supervision est maintenant déployée et configurée avec Prometheus pour la collecte de métriques, Grafana pour la visualisation des tableaux de bord et les Exporters pour récupérer les métriques des différentes composantes du cluster Kubernetes et des applications. Utilisez les tableaux de bord et les alertes pour surveiller la santé de votre infrastructure Kubernetes et des applications déployées.
+
+https://scribehow.com/shared/Create_a_new_alert_rule_with_a_15_minute_evaluation_interval_Copy__Bgxvgmh2Qq2pvrBa5LTOQw
+
+https://scribehow.com/shared/Creating_a_Dashboard_and_Monitoring_Nginx_with_Prometheus__eMITCaMwRwS8G_OUr4LlHw
