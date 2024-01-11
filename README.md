@@ -207,7 +207,7 @@ Les alertes Prometheus sont définies dans les fichiers YAML du dossier alerts/.
 Pour ajouter des métriques d'une nouvelle application à superviser :
 
 - Déployez l'Exporter Prometheus approprié pour la nouvelle application.
-- Définissez les requêtes PromQL pour récupérer les métriques importantes de cette application.
+- Sélectionner les métriques importantes de cette application.
 - Créez des tableaux de bord Grafana pour visualiser ces métriques.
 
 ## Conclusion :
