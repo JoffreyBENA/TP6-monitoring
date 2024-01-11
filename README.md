@@ -153,19 +153,19 @@ Focus sur fonctionnement des exporters:
 
 Pour déployer la solution de supervision, suivez les étapes ci-dessous :
 
-### a- Déployez Prometheus, Grafana et les Exporters :
+### a- Déployez les applications de démonstration (Nginx et MySQL) :
+
+```bash
+  - kubectl apply -f nginx/
+#   - kubectl apply -f mysql
+```
+
+### b- Déployez Prometheus, Grafana et les Exporters :
 
 ```bash
   - kubectl apply -f exporters/
   - kubectl apply -f prometheus/
   - kubectl apply -f grafana/
-```
-
-### b- Déployez les applications de démonstration (Nginx et MySQL) :
-
-```bash
-  - kubectl apply -f nginx/
-  - kubectl apply -f mysql
 ```
 
 ## 6- Configuration :
