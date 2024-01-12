@@ -186,13 +186,13 @@ gcloud container clusters get-credentials $CLUSTER_NAME --zone=$REGION --project
 # # Déploiement de la plateforme ECK
 # kubectl apply -f https://raw.githubusercontent.com/elastic/cloud-on-k8s/2.9/config/recipes/elastic-agent/fleet-kubernetes-integration.yaml
 
-# Déploiement de l'application Nginx
-kubectl apply -f ../kubernetes/nginx/nginx-deployment.yml
-kubectl apply -f ../kubernetes/nginx/nginx-service.yml
+# # Déploiement de l'application Nginx
+# kubectl apply -f ../kubernetes/nginx/nginx-deployment.yml
+# kubectl apply -f ../kubernetes/nginx/nginx-service.yml
 
-# Déploiement de l'application App (Python-handle-it)
-kubectl apply -f ../kubernetes/app/app-deployment.yml
-kubectl apply -f ../kubernetes/app/app-service.yml
+# # Déploiement de l'application App (Python-handle-it)
+# kubectl apply -f ../kubernetes/app/app-deployment.yml
+# kubectl apply -f ../kubernetes/app/app-service.yml
 
 # # Helm :
 # helm version
@@ -209,8 +209,8 @@ kubectl apply -f ../kubernetes/app/app-service.yml
 
 # # --------------------------------------------------------------------
 
-# Ajoutez une pause de 60 secondes
-sleep 60
+# # Ajoutez une pause de 60 secondes
+# sleep 60
 
 # #--------------------------------------------------------------------
 
@@ -220,36 +220,36 @@ kubectl get services
 
 # kubectl config unset current-context
 
-#--------------------------------------------------------------------
+# #--------------------------------------------------------------------
 
-# Ajoutez une pause de 60 secondes
-sleep 60
+# # Ajoutez une pause de 60 secondes
+# sleep 60
 
-#--------------------------------------------------------------------
+# #--------------------------------------------------------------------
 
-# Récupérer les ressources Kubernetes avec l'étiquette "elastic"
-kubectl get elastic
+# # Récupérer les ressources Kubernetes avec l'étiquette "elastic"
+# kubectl get elastic
 
-#--------------------------------------------------------------------
+# #--------------------------------------------------------------------
 
-# Ajoutez une pause de 60 secondes
-sleep 60
+# # Ajoutez une pause de 60 secondes
+# sleep 60
 
-#--------------------------------------------------------------------
+# #--------------------------------------------------------------------
 
-# Récupérer le mot de passe de l'utilisateur "elastic" depuis le secret
-echo -e "Le mot de passe de l'utilisateur 'elastic' est : \033[1;31;4m$(kubectl get secret elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode)\033[0m"
+# # Récupérer le mot de passe de l'utilisateur "elastic" depuis le secret
+# echo -e "Le mot de passe de l'utilisateur 'elastic' est : \033[1;31;4m$(kubectl get secret elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode)\033[0m"
 
-echo "Installation et configuration terminées."
+# echo "Installation et configuration terminées."
 
-# --------------------------------------------------------------------
+# # --------------------------------------------------------------------
 
-# Ajoutez une pause de 1min
-sleep 60
+# # Ajoutez une pause de 1min
+# sleep 60
 
-# --------------------------------------------------------------------
-# Mettre en place un port-forwarding pour accéder à Kibana localement
-kubectl port-forward service/kibana-kb-http 5601
+# # --------------------------------------------------------------------
+# # Mettre en place un port-forwarding pour accéder à Kibana localement
+# kubectl port-forward service/kibana-kb-http 5601
 
 # Ctrl + C : pour quitter le port-fowarding
 
@@ -279,14 +279,14 @@ kubectl port-forward service/kibana-kb-http 5601
 
 # # --------------------------------------------------------------------
 
-# # Ajoutez une pause de 10 secondes
-# sleep 15
+# Ajoutez une pause de 10 secondes
+sleep 15
 
-# #--------------------------------------------------------------------
+#--------------------------------------------------------------------
 
-# kubectl get deployments
-# kubectl get pods
-# kubectl get services
+kubectl get deployments
+kubectl get pods
+kubectl get services
 
 # # kubectl config unset current-context
 
