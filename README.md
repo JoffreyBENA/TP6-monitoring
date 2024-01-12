@@ -8,7 +8,7 @@ Cette documentation décrit la mise en place d'une solution de supervision centr
 
 ## 2- Arborescence des Fichiers
 
-``` shell
+```shell
 . # Arborescence du repository
 ├── README.md
 ├── alerts
@@ -90,10 +90,12 @@ Cette arborescence représente la structure d'un projet avec plusieurs dossiers 
 1. README.md: Fichier de documentation expliquant le projet.
 
 2. alerts/
+
    1. alert.rules: Fichier contenant les règles d'alerte Prometheus pour la surveillance.
    2. kube-node-cpu-alerts.yaml: Fichier YAML définissant des alertes spécifiques pour la CPU des nœuds Kubernetes.
 
 3. deploy-gke-cluster/
+
    1. **README.md**: Fichier de documentation spécifique au déploiement du cluster GKE.
    2. **ansible/**: Dossier contenant les fichiers Ansible pour le déploiement et la configuration.
       1. ansible.cfg, inventory.ini, playbook.yml, vars.yml: Fichiers de configuration Ansible.
@@ -113,22 +115,22 @@ Cette arborescence représente la structure d'un projet avec plusieurs dossiers 
    7. **terraform-destroy.sh**: Script Bash pour détruire les ressources Terraform.
 
 4. exporter/
-Fichiers YAML définissant le déploiement et le service Kubernetes pour différents exportateurs (kube-state-metrics, MySQL, Nginx, Node
+   Fichiers YAML définissant le déploiement et le service Kubernetes pour différents exportateurs (kube-state-metrics, MySQL, Nginx, Node
 
 5. grafana/
-Fichiers YAML définissant le déploiement et le service Kubernetes pour Grafana.
+   Fichiers YAML définissant le déploiement et le service Kubernetes pour Grafana.
 
 6. mysql/
-Fichiers YAML définissant le déploiement et le service Kubernetes pour MySQL.
+   Fichiers YAML définissant le déploiement et le service Kubernetes pour MySQL.
 
 7. nginx/
-Fichiers YAML définissant le déploiement et le service Kubernetes pour Nginx.
+   Fichiers YAML définissant le déploiement et le service Kubernetes pour Nginx.
 
 8. prometheus/
-Fichiers YAML définissant le déploiement et le service Kubernetes pour Prometheus.
+   Fichiers YAML définissant le déploiement et le service Kubernetes pour Prometheus.
 
 9. schema/
-Fichiers graphiques (JPG, drawio, PDF) décrivant le schéma de surveillance de l'application.
+   Fichiers graphiques (JPG, drawio, PDF) décrivant le schéma de surveillance de l'application.
 
 10. tp_6_monitoring.pdf: Document PDF lié au TP 6 sur le monitoring.
 
@@ -168,19 +170,7 @@ Pour déployer la solution de supervision, suivez les étapes ci-dessous :
   - kubectl apply -f grafana/
 ```
 
-## 6- Configuration :
-
-La configuration de la solution de supervision se trouve dans les fichiers YAML suivants :
-
-  - prometheus/prometheus.yaml : Déploiement de Prometheus.
-  - prometheus/prometheus-config.yaml : Configuration Prometheus (prometheus.yml).
-  - grafana/grafana.yaml : Déploiement de Grafana.
-  - grafana/dashboards/ : Fichiers JSON des tableaux de bord Grafana.
-  - exporters/ : Déploiements des Exporters Prometheus pour récupérer les métriques.
-  - applications/ : Déploiements des applications de démonstration (Nginx et MySQL).
-  - alerts/ : Fichiers YAML des alertes Prometheus.
-
-## 7- Métriques Importantes :
+## 6- Métriques Importantes :
 
 Les métriques collectées sont liées aux quatre Signaux d'Or :
 
@@ -191,18 +181,18 @@ Les métriques collectées sont liées aux quatre Signaux d'Or :
 
 Les métriques collectées incluent celles provenant de Node Exporter, Kube State Metrics Exporter, Nginx Exporter, MySQL Exporter, etc.
 
-## 8- Utilisation des Tableaux de Bord :
+## 7- Utilisation des Tableaux de Bord :
 
 Pour utiliser les tableaux de bord fournis avec Grafana :
 
 - Déployez les fichiers JSON des tableaux de bord via l'interface Grafana.
 - Explorez les tableaux de bord pour surveiller les différentes composantes du cluster et des applications.
 
-## 9- Alertes :
+## 8- Alertes :
 
 Les alertes Prometheus sont définies dans les fichiers YAML du dossier alerts/. Les alertes importantes ont été configurées pour les métriques critiques, comme la haute utilisation CPU sur les nœuds Kubernetes.
 
-## 10- Ajouter de nouvelles Métriques :
+## 9- Ajouter de nouvelles Métriques :
 
 Pour ajouter des métriques d'une nouvelle application à superviser :
 
@@ -211,6 +201,7 @@ Pour ajouter des métriques d'une nouvelle application à superviser :
 - Créez des tableaux de bord Grafana pour visualiser ces métriques.
 
 ## Conclusion :
+
 La solution de supervision est maintenant déployée et configurée avec Prometheus pour la collecte de métriques, Grafana pour la visualisation des tableaux de bord et les Exporters pour récupérer les métriques des différentes composantes du cluster Kubernetes et des applications. Utilisez les tableaux de bord et les alertes pour surveiller la santé de votre infrastructure Kubernetes et des applications déployées.
 
 https://scribehow.com/shared/Create_a_new_alert_rule_with_a_15_minute_evaluation_interval_Copy__Bgxvgmh2Qq2pvrBa5LTOQw
