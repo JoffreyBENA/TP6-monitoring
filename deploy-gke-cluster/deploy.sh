@@ -3,7 +3,7 @@
 echo -e "\033[1;32;4m-- Etape 1/8: Définition et Configuration du projet GCP --\033[0m"
 
 # Définition du projet GCP
-export GCP_PROJECT="exalted-airfoil-402614"  # Remplacez par le nom de votre projet
+export GCP_PROJECT="ace-scarab-411621"  # Remplacez par le nom de votre projet
 
 # Configuration du projet GCP
 echo "Configuration du projet GCP : $GCP_PROJECT"
@@ -171,9 +171,9 @@ CLUSTER_NAME=$(terraform output cluster_name  | sed 's/"//g')
 cd ..
 
 gcloud config set project $GCP_PROJECT
-# gcloud config set project exalted-airfoil-402614 
+# gcloud config set project ace-scarab-411621 
 gcloud container clusters get-credentials $CLUSTER_NAME --zone=$REGION --project=$GCP_PROJECT
-# gcloud container clusters get-credentials my-gke-cluster --zone=europe-west9 --project=exalted-airfoil-402614                                                                     
+# gcloud container clusters get-credentials my-gke-cluster --zone=europe-west9 --project=ace-scarab-411621                                                                     
 
 # --------------------------------------------------------------------
 
